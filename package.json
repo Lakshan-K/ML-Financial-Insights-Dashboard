@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/node": "^20.10.6"
+  },
+  "dependencies": {
+    "mongodb": "^6.3.0"
   }
 }
