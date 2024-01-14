@@ -3,6 +3,7 @@
 import { useState } from "react";
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
 import { Link } from "react-router-dom";
+import PixIcon from "@mui/icons-material/Pix";
 import { Box, Typography, useTheme } from "@mui/material";
 import FlexBetween from "@/components/FlexBetween";
 
@@ -16,10 +17,12 @@ const Navbar = (props: Props) => {
         <FlexBetween mb="0.25rem" p="0.5rem 2rem" color={palette.grey[300]}>
 
             <FlexBetween gap="0.75rem">
-                <FilterVintageIcon sx = {{fontSize: "28px"}}/>
+
+                <PixIcon sx={{ fontSize: "28px" }}/>
                 <Typography variant="h4" fontSize="16px">
-                    CHOOSE NAME 
+                   ML Financial Insights Dashboard
                 </Typography>
+
             </FlexBetween>
 
         {/*Right SIDE*/}
