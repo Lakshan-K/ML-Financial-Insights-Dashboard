@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "mongodb": "^6.3.0",
-    "recharts": "^2.10.3"
+    "recharts": "^2.10.4",
+    "regression": "^2.0.1"
   }
 }
