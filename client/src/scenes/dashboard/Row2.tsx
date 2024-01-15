@@ -1,14 +1,12 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import BoxHeader from '@/components/BoxHeader'
 import DashboardBox from '@/components/DashboardBox'
 import FlexBetween from '@/components/FlexBetween'
 import { useGetKpisQuery, useGetProductsQuery } from '@/state/api'
 import { Box, Typography, useTheme } from '@mui/material'
-import React, { useMemo } from 'react'
+import  { useMemo } from 'react'
 import { CartesianGrid, Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis, ZAxis } from 'recharts'
 
-type Props = {}
+
 
 const pieData = [
   { name: "Group A", value: 600 },
@@ -128,7 +126,7 @@ const Row2 = () => {
               paddingAngle={2}
               dataKey="value"
             >
-              {pieData.map((entry, index) => (
+              {pieData.map((_entry, index) => (
                 <Cell key={`cell-${index}`} fill={pieColors[index]} />
               ))}
             </Pie>
@@ -168,10 +166,10 @@ const Row2 = () => {
           }}
         >
           <CartesianGrid stroke = {palette.grey[800]}/>
-          <XAxis type="number" dataKey="price" name="price" axisLine={false} tickLine={false} style={{ fontSize: "10px"}} tickFormatter={(v) => '$${v}'} />
-          <YAxis type="number" dataKey="expense" name="expense" axisLine={false} tickLine={false} style={{ fontSize: "10px"}} tickFormatter={(v) => '$${v}'} />
+          <XAxis type="number" dataKey="price" name="price" axisLine={false} tickLine={false} style={{ fontSize: "10px"}} tickFormatter={(v) => `$${v}`} />
+          <YAxis type="number" dataKey="expense" name="expense" axisLine={false} tickLine={false} style={{ fontSize: "10px"}} tickFormatter={(v) => `$${v}`} />
           <ZAxis type="number" range={[20]}/>
-          <Tooltip formatter={(v) => '$${v}'} />
+          <Tooltip formatter={(v) => `$${v}`} />
           <Scatter name="Product Expense Ratio" data={productExpenseData} fill={palette.tertiary[500]} />
         </ScatterChart>
       </ResponsiveContainer>
