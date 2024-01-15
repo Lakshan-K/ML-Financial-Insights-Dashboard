@@ -1,11 +1,11 @@
 {
   "devDependencies": {
     "@types/node": "^20.10.6",
-    "@types/recharts": "^1.8.29"
+    "@types/recharts": "^1.8.29",
+    "recharts": "^2.10.4"
   },
   "dependencies": {
     "mongodb": "^6.3.0",
-    "recharts": "^2.10.4",
     "regression": "^2.0.1"
   }
 }

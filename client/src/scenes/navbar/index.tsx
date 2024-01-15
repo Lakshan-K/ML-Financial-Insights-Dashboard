@@ -1,15 +1,10 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
 import { Link } from "react-router-dom";
-import PixIcon from "@mui/icons-material/Pix";
 import { Box, Typography, useTheme } from "@mui/material";
 import FlexBetween from "@/components/FlexBetween";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
     const { palette } = useTheme();
     const [selected, setSelected] = useState("dashboard");
     return (
@@ -18,7 +13,7 @@ const Navbar = (props: Props) => {
 
             <FlexBetween gap="0.75rem">
 
-                <PixIcon sx={{ fontSize: "28px" }}/>
+                <FilterVintageIcon sx={{ fontSize: "28px" }}/>
                 <Typography variant="h4" fontSize="16px">
                    ML Financial Insights Dashboard
                 </Typography>

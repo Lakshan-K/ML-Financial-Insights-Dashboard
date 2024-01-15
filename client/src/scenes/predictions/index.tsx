@@ -1,18 +1,18 @@
-import DashboardBox from "@/components/DashboardBox";
-import FlexBetween from "@/components/FlexBetween";
 import { useGetKpisQuery } from "@/state/api";
 import { Box, Button, Typography, useTheme } from "@mui/material";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import DashboardBox from "@/components/DashboardBox";
+import FlexBetween from "@/components/FlexBetween";
 import {
-  CartesianGrid,
-  Label,
-  Legend,
-  Line,
-  LineChart,
-  ResponsiveContainer,
   Tooltip,
+  ResponsiveContainer,
+  LineChart,
+  CartesianGrid,
   XAxis,
   YAxis,
+  Legend,
+  Line,
+  Label,
 } from "recharts";
 import regression, { DataPoint } from "regression";
 
@@ -24,14 +24,12 @@ const Predictions = () => {
   const formattedData = useMemo(() => {
     if (!kpiData) return [];
     const monthData = kpiData[0].monthlyData;
-
     const formatted: Array<DataPoint> = monthData.map(
       ({ revenue }, i: number) => {
         return [i, revenue];
       }
     );
     const regressionLine = regression.linear(formatted);
-
     return monthData.map(({ month, revenue }, i: number) => {
       return {
         name: month,
@@ -48,8 +46,7 @@ const Predictions = () => {
         <Box>
           <Typography variant="h3">Revenue and Predictions</Typography>
           <Typography variant="h6">
-            charted revenue and predicted revenue based on a simple linear
-            regression model
+            Forecasted revenue based on a simple linear regression model.
           </Typography>
         </Box>
         <Button
@@ -79,12 +76,13 @@ const Predictions = () => {
           </XAxis>
           <YAxis
             domain={[12000, 26000]}
+            tickLine={false}
             axisLine={{ strokeWidth: "0" }}
             style={{ fontSize: "10px" }}
             tickFormatter={(v) => `$${v}`}
           >
             <Label
-              value="Revenue in USD"
+              value="Revenue in CAD"
               angle={-90}
               offset={-5}
               position="insideLeft"
