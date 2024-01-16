@@ -24,11 +24,12 @@ This project is a comprehensive finance dashboard that leverages machine learnin
 
 ## Technologies Used
 
-- **Frontend:** React, TypeScript, MUI
+- **Frontend:** React, TypeScript, MUI, Recharts
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **State Management:** Redux Toolkit
 - **Machine Learning:** Python, ML Libraries
+- **Build Tool:** Vite
 
 
 
